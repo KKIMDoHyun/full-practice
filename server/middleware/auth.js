@@ -11,6 +11,7 @@ let auth = (req, res, next) => {
     if (err) throw err;
     // 유저가 없으면 인증 No!
     if (!user) return res.json({ isAuth: false, error: true });
+
     // 유저가 있으면 인증 Okay
     req.token = token;
     req.user = user;
